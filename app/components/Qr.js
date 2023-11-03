@@ -1,20 +1,24 @@
 "use client"
 
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import QRCode from 'qrcode'
+import Image from 'next/image';
 
 export default function Qr() {
-  const initialized = useRef(false)
+  const initialized = useRef(false);
+  const [qrImg, setQrImg] = useState();
 
   async function generateQRCode(text) {
     //apply to #qr-code
-    document.getElementById("qr-code").src = await QRCode.toDataURL(text, {
+    let src = await QRCode.toDataURL(text, {
       margin: 2,
       color: {
         dark: "#fe007d",
         light: "#FFFFFF",
       },
     });
+
+    setQrImg(src)
   }
   
   async function generateLaunchCode() {
@@ -41,6 +45,6 @@ export default function Qr() {
   }, [])
   
   return (
-    <div>qr</div>
+    qrImg && <Image alt='QR Code' id="qr-code" src={qrImg} fill/>
   )
 }
