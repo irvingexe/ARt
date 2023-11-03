@@ -8,10 +8,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
  return (
     <html lang="en">
-      <head>
-        <Script src="https://launchar.app/sdk/v1?key=XkiKqjr09vKqXQGgNE0VnQBhodJWlhD6&redirect=true" strategy='beforeInteractive'></Script>
-      </head>
       <body>{children}</body>
+      <Script src="https://launchar.app/sdk/v1?key=XkiKqjr09vKqXQGgNE0VnQBhodJWlhD6&redirect=true" strategy='beforeInteractive'></Script>
     </html>
   )
 }
