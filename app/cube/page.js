@@ -1,10 +1,10 @@
 "use client"
 
 import { Canvas } from '@react-three/fiber'
-import React, { createContext } from 'react'
+import React from 'react'
 import { ARButton, XR } from '@react-three/xr'
-import XrHitProvider from '../components/XrHitProvider'
-import { Cubes } from './components/Cubes'
+import XrHitProvider from '../contexts/XrHitProvider'
+import { CubeContainer } from './components/CubeContainer'
 
 export default function cube() {
 
@@ -14,7 +14,7 @@ export default function cube() {
       <Canvas>
         <XR>
           <XrHitProvider>
-            <Cubes/>
+            <CubeContainer/>
           </XrHitProvider>
         </XR>
       </Canvas>

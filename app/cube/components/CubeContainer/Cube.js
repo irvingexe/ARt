@@ -1,10 +1,8 @@
 'use client'
 
-import { OrbitControls } from '@react-three/drei'
-import { useFrame } from '@react-three/fiber'
 import React, { useRef } from 'react'
 
-export default function CubeContainer({position}) {
+export default function Cube({position}) {
 
   const cube = useRef()
   
@@ -15,11 +13,9 @@ export default function CubeContainer({position}) {
   */
 
   return (
-    <>
       <mesh ref={cube} position={position}>
         <boxGeometry args={[0.5, 0.5, 0.5]}/>
         <meshStandardMaterial color={'mediumpurple'}/>
       </mesh>
-    </>
   )
 }

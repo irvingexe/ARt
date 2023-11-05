@@ -1,8 +1,7 @@
 'use client'
 
-import { OrbitControls } from '@react-three/drei'
-import { Interactive, useHitTest, useXR } from '@react-three/xr';
-import React, { createContext, useRef, useState } from 'react'
+import { Interactive, useHitTest } from '@react-three/xr';
+import React, { useRef, useState } from 'react'
 import { HitContext } from './HitContext';
 
 export default function XrHitProvider({children}) {
@@ -17,14 +16,12 @@ export default function XrHitProvider({children}) {
   }
 
   useHitTest((hitMatrix, hit) => {
-    hitMatrix.decompose(reticleRef.current.position, reticleRef.current.quaternion, reticleRef.current  .scale);
+    hitMatrix.decompose(reticleRef.current.position, reticleRef.current.quaternion, reticleRef.current.scale);
     reticleRef.current.rotation.set(-Math.PI/2, 0, 0);
   })
 
   return (
     <>
-      <ambientLight/>
-      <OrbitControls/>
       <HitContext.Provider value={hitPoints}>
         {children}
       </HitContext.Provider>

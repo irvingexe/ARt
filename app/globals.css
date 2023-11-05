@@ -4,3 +4,7 @@
   height: 100vh;
   background: #292929;
 }
+
+.ar-button {
+  bottom: 50px !important;
+}

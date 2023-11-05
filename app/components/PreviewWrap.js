@@ -6,7 +6,7 @@ export const PreviewWrap = ({children, preview}) => {
   const {isPresenting} = useXR();
 
   useThree(({camera}) => {
-    if (!isPresenting) camera.position.set(0, 0.3, -1);
+    if (!isPresenting) camera.position.set(0, 0.3, 5);
   })
 
   return ( isPresenting ? children : preview )
