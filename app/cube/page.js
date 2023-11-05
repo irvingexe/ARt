@@ -1,10 +1,10 @@
 "use client"
 
 import { Canvas } from '@react-three/fiber'
-import React from 'react'
-import CubeContainer from './CubeContainer'
+import React, { createContext } from 'react'
 import { ARButton, XR } from '@react-three/xr'
-import XrHitCube from './XrHitCube'
+import XrHitProvider from '../components/XrHitProvider'
+import { Cubes } from './components/Cubes'
 
 export default function cube() {
 
@@ -13,7 +13,9 @@ export default function cube() {
       <ARButton sessionInit={{requiredFeatures: 'hit-test'}}/>
       <Canvas>
         <XR>
-          <XrHitCube/>
+          <XrHitProvider>
+            <Cubes/>
+          </XrHitProvider>
         </XR>
       </Canvas>
     </div>

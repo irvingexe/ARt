@@ -8,9 +8,11 @@ export default function CubeContainer({position}) {
 
   const cube = useRef()
   
+  /*
   useFrame((state, delta) => {
     cube.current.rotation.y += 0.05;
   })
+  */
 
   return (
     <>
