@@ -6,7 +6,7 @@ import { useXrHits } from '../../contexts/XrHitProvider';
 import { useGLTF } from '@react-three/drei';
 
 export const ModelContainer = () => {
-  const modelURL = '/assets/models/druid.gltf';
+  const modelURL = '/ARt/assets/models/druid.gltf';
   const { nodes, materials, animations, parser } = useGLTF(modelURL);
   let hitPoints = useXrHits();
   let model;
