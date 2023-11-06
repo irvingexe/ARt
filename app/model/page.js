@@ -9,6 +9,7 @@ import { OrbitControls } from '@react-three/drei'
 import { CharAnimProvider } from '../contexts/CharAnimProvider'
 import { Interface } from '../components/Interface'
 import { XrStatusProvider } from '../contexts/XrStatusProvider'
+import Cube from '../cube/CubeContainer/Cube'
 
 export default function Model() {
   const [overlayContent, setOverlayContent] = useState();
@@ -36,6 +37,7 @@ export default function Model() {
               <pointLight position={[0, 20, 10]} intensity={900} />
               <OrbitControls/>
               <XrHitProvider>
+                <Cube position={[0,0,-5]} />
               </XrHitProvider>
             </XR>
           </Canvas>
