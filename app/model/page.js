@@ -38,7 +38,7 @@ export default function Model() {
               <pointLight position={[0, 20, 10]} intensity={900} />
               <OrbitControls/>
               <XrHitProvider>
-                <StaticModel position={[0,0,-5]} model={'/assets/models/druid.gltf'} />
+                <StaticModel position={[0,0,-5]} model={'/ARt/assets/models/druid.gltf'} />
               </XrHitProvider>
             </XR>
           </Canvas>
