@@ -4,10 +4,11 @@ import { Canvas } from '@react-three/fiber'
 import React, { useCallback, useState } from 'react'
 import { ARButton, XR } from '@react-three/xr'
 import XrHitProvider from '../contexts/XrHitProvider'
-import { ModelContainer } from './components/ModelContainer'
+import { ModelContainer } from './ModelContainer'
 import { OrbitControls } from '@react-three/drei'
 import { CharAnimProvider } from '../contexts/CharAnimProvider'
 import { Interface } from '../components/Interface'
+import { XrStatusProvider } from '../contexts/XrStatusProvider'
 
 export default function Model() {
   const [overlayContent, setOverlayContent] = useState();
@@ -19,27 +20,29 @@ export default function Model() {
 
   return (
     <div className='ar-root'>
-      <CharAnimProvider>
-        <ARButton 
-          className='ar-button' 
-          sessionInit={{
-            requiredFeatures: ['hit-test'],
-            optionalFeatures: ['dom-overlay'],
-            domOverlay: {root: overlayContent}
-          }}
-        />
-        <Canvas>
-          <XR>
-            <ambientLight/>
-            <pointLight position={[0, 20, 10]} intensity={900} />
-            <OrbitControls/>
-            <XrHitProvider>
-              <ModelContainer/>
-            </XrHitProvider>
-          </XR>
-        </Canvas>
-        <Interface ref={interfaceRef}/>
-      </CharAnimProvider>
+      <XrStatusProvider>
+        <CharAnimProvider>
+          <ARButton 
+            className='ar-button' 
+            sessionInit={{
+              requiredFeatures: ['hit-test'],
+              optionalFeatures: ['dom-overlay'],
+              domOverlay: {root: overlayContent}
+            }}
+          />
+          <Canvas>
+            <XR>
+              <ambientLight/>
+              <pointLight position={[0, 20, 10]} intensity={900} />
+              <OrbitControls/>
+              <XrHitProvider>
+                <ModelContainer/>
+              </XrHitProvider>
+            </XR>
+          </Canvas>
+          <Interface ref={interfaceRef}/>
+        </CharAnimProvider>
+      </XrStatusProvider>
     </div>
   )
 }

@@ -1,12 +1,12 @@
-import React, { useContext } from 'react'
-import Model from './Model'
-import { HitContext } from '../../../contexts/XrHitProvider/HitContext';
-import { PreviewWrap } from '../../../components/PreviewWrap';
+import React from 'react'
+import Model from './StaticModel'
+import { PreviewWrap } from '../../components/PreviewWrap';
 import AnimatedModel from './AnimatedModel';
+import { useXrHits } from '../../contexts/XrHitProvider';
 
 export const ModelContainer = () => {
 
-  let hitPoints = useContext(HitContext);
+  let hitPoints = useXrHits();
   
   return (
     <PreviewWrap preview={<Model position={[0,0,0]} model3d={'/assets/models/druid.gltf'}/>}>

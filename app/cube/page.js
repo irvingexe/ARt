@@ -4,7 +4,7 @@ import { Canvas } from '@react-three/fiber'
 import React from 'react'
 import { ARButton, XR } from '@react-three/xr'
 import XrHitProvider from '../contexts/XrHitProvider'
-import { CubeContainer } from './components/CubeContainer'
+import { CubeContainer } from './CubeContainer'
 
 export default function cube() {
 

@@ -1,8 +1,13 @@
 'use client'
 
 import { Interactive, useHitTest } from '@react-three/xr';
-import React, { useRef, useState } from 'react'
-import { HitContext } from './HitContext';
+import React, { createContext, useContext, useRef, useState } from 'react'
+
+export const HitContext = createContext([]);
+
+export const useXrHits = () => {
+  return useContext(HitContext)
+}
 
 export default function XrHitProvider({children}) {
 

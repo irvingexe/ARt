@@ -6,7 +6,7 @@ import React, { useEffect, useRef } from 'react'
 import { useGLTF, 
 
 useAnimations } from '@react-three/drei'
-import { useCharAnim } from '../../../contexts/CharAnimProvider'
+import { useCharAnim } from '../../contexts/CharAnimProvider'
 
 export default function AnimatedModel(props) {
   const group = useRef();

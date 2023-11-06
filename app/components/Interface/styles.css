@@ -6,6 +6,10 @@
   pointer-events: none;
 }
 
+#overlay-content.hidden {
+  display: none;
+}
+
 .dom-container {
   position: absolute;
   bottom: 8vh;

@@ -1,11 +1,11 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import Cube from './Cube'
-import { HitContext } from '../../../contexts/XrHitProvider/HitContext';
 import { PreviewWrap } from '@/app/components/PreviewWrap';
+import { useXrHits } from '@/app/contexts/XrHitProvider';
 
 export const CubeContainer = () => {
 
-  let hitPoints = useContext(HitContext);
+  const hitPoints = useXrHits();
   
   return (
     <PreviewWrap preview={<Cube key={0} position={[0,0,0]}/>}>
