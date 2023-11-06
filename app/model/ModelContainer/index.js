@@ -4,9 +4,10 @@ import { PreviewWrap } from '../../components/PreviewWrap';
 import AnimatedModel from './AnimatedModel';
 import { useXrHits } from '../../contexts/XrHitProvider';
 import { useGLTF } from '@react-three/drei';
+import { prefix } from '@/app/prefix';
 
 export const ModelContainer = () => {
-  const modelURL = '/ARt/assets/models/druid.gltf';
+  const modelURL = `${prefix}/assets/models/druid.gltf`;
   const { nodes, materials, animations, parser } = useGLTF(modelURL);
   let hitPoints = useXrHits();
   let model;
