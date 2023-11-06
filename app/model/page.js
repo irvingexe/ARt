@@ -36,7 +36,6 @@ export default function Model() {
               <pointLight position={[0, 20, 10]} intensity={900} />
               <OrbitControls/>
               <XrHitProvider>
-                <ModelContainer/>
               </XrHitProvider>
             </XR>
           </Canvas>
